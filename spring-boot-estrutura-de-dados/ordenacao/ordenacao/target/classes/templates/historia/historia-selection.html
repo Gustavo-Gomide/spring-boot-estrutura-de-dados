@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação - Selection Sort</title>
+    <link rel="stylesheet" href="/css/barra-menu.css">
+    <link rel="stylesheet" href="/css/historia.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-icon" id="menu-icon">&#9776;</button>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="#">Explicação</a></li>
+                <li><a href="/demonstracao">Demonstração</a></li>
+                <li><a href="#">Gráficos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Apresentação sobre o Selection Sort</h1>
+        <h2>História e Origem do Selection Sort</h2>
+        <p>
+            O Selection Sort é um dos algoritmos de ordenação mais antigos, utilizado desde os primeiros tempos da 
+            computação. Sua origem exata é incerta, mas ele reflete métodos manuais de ordenação empregados 
+            para organizar listas pequenas, como cartas ou objetos. Na década de 1950, o crescimento da 
+            computação levou ao estudo formal de algoritmos de ordenação, e o Selection Sort foi um dos primeiros 
+            a ser documentado devido à sua simplicidade. Ele é amplamente ensinado em cursos introdutórios de 
+            ciência da computação
+        </p>
+
+        <h2>Características do Selection Sort</h2>
+        <ul>
+            <li>
+                Iterativo: O algoritmo percorre a lista várias vezes até que esteja completamente ordenada.
+            </li>
+            <li>
+                Ordenação por Comparação: Compara repetidamente os elementos da lista para 
+                determinar o menor.
+            </li>
+            <li>
+                Não Estável: Elementos iguais podem ter sua ordem relativa alterada durante a ordenação.
+            </li>
+            <li>
+                Independente dos Dados de Entrada: O desempenho não varia conforme a ordem inicial 
+                dos elementos.
+            </li>
+            <li>
+                In-place: Não requer estruturas de dados auxiliares significativas, utilizando apenas a lista 
+                original.
+                
+            </li>
+        </ul>
+        
+        <h2>Funcionamento do Selection Sort</h2>
+        <p class="super-paragrafo">
+            O Selection Sort é um algoritmo que organiza elementos usando a própria lista, sem precisar de 
+            muita memória extra. Ele funciona assim:
+        </p>
+        <p class="sub-paragrafo">
+            <span>
+                Primeiro, encontra o menor elemento e troca com o primeiro da lista. 
+                <br>
+                <br>
+                Depois, procura o próximo
+                menor entre os elementos restantes e o move para a posição correta. 
+                <br>
+                <br>
+                Esse processo é repetido
+                até que toda a lista esteja ordenada. 
+                <br>
+                <br>
+                Assim, a lista vai sendo organizada passo a passo, até que
+                todos os elementos estejam no lugar certo.
+            </span>
+        </p>
+
+        <h2>Passo a Passo do Algoritmo:</h2>
+        <ul>
+            <li>
+                Divida a lista em uma parte ordenada (inicialmente vazia) e outra não ordenada.
+            </li>
+            <li>
+                Selecione o menor elemento da parte não ordenada.
+            </li>
+            <li>
+                Troque o menor elemento encontrado com o primeiro elemento da parte não ordenada,
+                movendo-o para a parte ordenada.
+            </li>
+            <li>
+                Repita o processo até que todos os elementos estejam ordenados.
+            </li>
+        </ul>
+
+        <h2>Algoritmo do Selection Sort:</h2>
+        <ul>
+            <li>
+                Particione (dividir um conjunto ou lista em subpartes) o arranjo de elementos a ser ordenado
+                em dois sub-arranjos:
+            </li>
+            <li>Um sub-arranjo A, inicialmente vazio, que conterá os elementos já ordenados.
+            </li>
+            <li>
+                Um sub-arranjo B, que inicialmente contém todos os elementos da lista original.
+            </li>
+            <li>
+                Selecione o menor elemento da sub-arranjo B e mova-o para o final do sub-arranjo A.
+            </li>
+            <li>
+                Se o sub-arranjo B não estiver vazio, volte ao passo 2.
+            </li>
+            <li>
+                Retorne o sub-arranjo A, que contém os elementos da lista original ordenados de forma
+                ascendente
+            </li>
+        </ul>
+
+        <h2>Exemplo:</h2>
+        <ul>
+            <li>
+                Lista inicial: [5, 3, 8, 4, 2].
+            </li>
+            <li>
+                Passos:
+            </li>
+            <li>
+                Menor elemento é 2; troca com 5. Lista: [2, 3, 8, 4, 5].
+            </li>
+            <li>
+                Menor elemento é 3 (já está na posição correta).
+            </li>
+            <li>
+                Menor elemento é 4; troca com 8. Lista: [2, 3, 4, 8, 5].
+            </li>
+            <li>
+                Menor elemento é 5; troca com 8.
+            </li>
+            <li>
+                Lista final: [2, 3, 4, 5, 8]
+            </li>
+        </ul>
+
+        <h2>Análise de Complexidade do Selection Sort</h2>
+        <p>
+            Complexidade de Tempo: O(n²)
+            O Selection Sort tem complexidade de tempo O(n²) porque utiliza dois loops aninhados (um
+            dentro do outro):
+        </p>
+
+        <h2>Primeiro Loop: Seleção de Elemento</h2>
+        <p>
+            O primeiro loop percorre o array de forma sequencial, elemento por elemento. Em cada passo,
+            ele escolhe o próximo elemento para colocar na posição correta.
+            <br>
+            Esse loop executa n vezes, onde n é o número total de elementos no array. Por isso, sua
+            complexidade é O(n).
+        </p>
+
+        <h2>Segundo Loop: Comparação de Elementos</h2>
+        <p>
+            Dentro do primeiro loop, há um segundo loop que busca o menor elemento da parte não
+            ordenada do array. Esse loop compara o elemento atual com todos os elementos restantes para
+            encontrar o menor.
+            <br>
+            Em média, ele executa cerca de n vezes, diminuindo a cada iteração à medida que a parte
+            ordenada cresce. No entanto, no pior caso, ele ainda percorre a maior parte do array, resultando
+            em uma complexidade também de O(n).
+            <br>
+            Portanto, como os dois loops são aninhados, a complexidade total é multiplicada:
+        </p>
+        <code>O(n) &times; O(n) = O(n2)</code>
+        <p>
+            Isso significa que, para listas grandes, o tempo de execução aumenta rapidamente, tornando o
+            Selection Sort ineficiente para grandes volumes de dados.
+        </p>
+
+        <h2>Espaço Auxiliar: O (1)</h2>
+        <p>
+            O Selection Sort é eficiente em termos de memória. Ele é considerado um algoritmo de 
+            ordenação in-place, o que significa que realiza a ordenação dentro do próprio array original, sem 
+            precisar de espaço extra significativo. A única memória adicional usada é para algumas variáveis 
+            temporárias (como a que guarda o índice do menor elemento encontrado), o que é desprezível. 
+            Por isso, o uso de memória extra é constante, sendo representado por O (1), ou seja, o uso de 
+            memória não cresce com o tamanho do array.
+        </p>
+        
+        <h2>Vantagens do Selection Sort</h2>
+        <ul>
+            <li>
+                Fácil de entender e implementar, sendo ideal para ensinar conceitos básicos de ordenação.
+            </li>
+            <li>
+                Requer apenas um espaço de memória constante O (1)
+            </li>
+            <li>
+                Necessita de menos trocas (ou escritas em memória) em comparação a muitos outros 
+                algoritmos padrão. Apenas o Cycle Sort o supera em termos de escritas em memória. 
+                Portanto, pode ser uma escolha simples de algoritmo quando escritas em memória são 
+                caras.
+            </li>
+        </ul>
+
+        <h2>Desvantagens do Selection Sort</h2>
+        <ul>
+            <li>
+                O Selection Sort tem complexidade de tempo O(n²), o que o torna mais lento em
+                comparação com algoritmos como o Quick Sort ou o Merge Sort.
+            </li>
+            <li>
+                Não mantém a ordem relativa de elementos iguais.
+            </li>
+            <li>
+                Não preserva a ordem relativa de itens com chaves iguais, o que significa que não é
+                estável.
+            </li>
+        </ul>
+
+        <h2>Comparação entre Selection Sort e Merge Sort</h2>
+
+        <h3>Funcionamento:</h3>
+        <p>
+            Selection Sort: Seleciona o menor elemento repetidamente e coloca-o na posição correta. <br>
+            Merge Sort: Divide a lista em sublistas menores, ordena e combina de forma ordenada.
+        </p>
+
+        <h3>Complexidade de Tempo:</h3>
+        <p>
+            Selection Sort: O(n^2), independente da ordem inicial. <br>
+            Merge Sort: O (n log n) em todos os casos.
+        </p>
+
+        <h3>Complexidade de Espaço:</h3>
+        <p>
+            Selection Sort: In-place, usando espaço O (1).
+            <br>
+            Merge Sort: Requer espaço adicional O(n).
+        </p>
+
+        <h3>Estabilidade:</h3>
+        <p>
+            Selection Sort: Não é estável.
+            <br>
+            Merge Sort: É estável.
+        </p>
+
+        <h3>Uso e Aplicações:</h3>
+        <p>
+            Selection Sort: Listas pequenas e ambientes com memória restrita.
+            <br>
+            Merge Sort: Listas grandes e quando estabilidade é importante.
+        </p>
+
+        <h2>Pontos Fortes do Selection Sort:</h2>
+        <p>
+            Realiza um número mínimo de trocas, ideal quando as trocas são custosas.
+            Não necessita de memória extra, eficiente em dispositivos com restrições de espaço
+        </p>
+
+        <h2>Conclusão</h2>
+        <p class="super-paragrafo">
+            O Selection Sort é um algoritmo clássico que permanece relevante na educação por sua
+            simplicidade e clareza. Por outro lado, o Merge Sort oferece maior eficiência e estabilidade,
+            sendo a escolha ideal para grandes conjuntos de dados. Em resumo:
+        </p>
+        <ul class="sub-paragrafo">
+            <li>
+                Selection Sort é ideal para quando a simplicidade e a memória limitada são críticas,
+                especialmente em listas pequenas.
+            </li>
+            <li>
+                Merge Sort é uma escolha excelente para grandes volumes de dados, devido à sua
+                eficiência e estabilidade
+            </li>
+        </ul>
+
+        <h2>Referencias</h2>
+        <ul class="lista-link">
+            <li>&#x1f517;
+                <a href="https://www.geeksforgeeks.org/selection-sort-algorithm-2/", target="_blank">
+                    geek for geeks
+                </a>
+            </li>
+            <li>&#x1f517;
+                <a href="https://joaoarthurbm.github.io/eda/posts/selection-sort/", target="_blank">
+                    joaoarthurbm - github
+                </a>
+            </li>
+            <li>&#x1f517;
+                <a href="http://desenvolvendosoftware.com.br/algoritmos/ordenacao/selection-sort.html", target="_blank">desenvolvendo software</a>
+            </li>
+        </ul>
+    </main>
+    <script src="/js/barra-menu.js"></script>
+</body>
+</html>

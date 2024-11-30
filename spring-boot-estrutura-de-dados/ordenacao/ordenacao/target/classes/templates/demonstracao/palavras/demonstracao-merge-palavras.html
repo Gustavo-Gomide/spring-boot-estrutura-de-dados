@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração MergeSort</title>
+    <link rel="stylesheet" href="/css/execucao-estilo.css">
+    <link rel="stylesheet" href="/css/barra-menu.css">
+</head>
+</head>
+<body>
+    <nav>
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+        <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/historia">História</a></li>
+            <li><a href="#">Explicação</a></li>
+            <li><a href="/demonstracao">Demonstração</a></li>
+            <li><a href="#">Gráficos</a></li>
+        </ul>
+    </nav> 
+    <main>
+        <h1>Demonstração do Merge sort palavras</h1>
+        <table class="table">
+            <caption th:text="${tempoExecucao}"></caption>
+            <thead>
+              <tr>
+                <th scope="col">Lista ordenada</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr th:each="palavra : ${listaPalavraMerge}">
+                    <td th:text="${palavra}"></td>
+                </tr>
+            </tbody>
+          </table>
+    </main>
+    <script src="/js/barra-menu.js"></script>
+</body>
+</html>

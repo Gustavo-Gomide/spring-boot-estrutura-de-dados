@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação - Merge Sort</title>
+    <link rel="stylesheet" href="/css/barra-menu.css">
+    <link rel="stylesheet" href="/css/historia.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-icon" id="menu-icon">&#9776;</button>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="#">Explicação</a></li>
+                <li><a href="/demonstracao">Demonstração</a></li>
+                <li><a href="#">Gráficos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Apresentação sobre o Merge Sort</h1>
+        <h2>Origem do Merge Sort</h2>
+        <p>
+            John von Neumann introduziu o algoritmo Merge Sort em 1945 como uma das primeiras técnicas de ordenação projetadas especificamente para computadores. O algoritmo surgiu do trabalho de von Neumann em desenvolver métodos computacionais eficientes para organizar e processar grandes volumes de dados, algo que estava se tornando crucial com o advento da computação digital.
+        </p>
+
+        <h2>Por que o Merge Sort foi criado?</h2>
+        <p>
+            Von Neumann criou o Merge Sort para resolver o problema da ordenação de dados de forma sistemática e eficiente. Isso era especialmente relevante para grandes conjuntos de dados, pois o algoritmo utiliza uma abordagem de dividir e conquistar que reduz a complexidade computacional. Ao dividir repetidamente os dados em subconjuntos menores e ordenados, e depois combiná-los em ordem, o Merge Sort atinge uma performance de O(nlog⁡n)O(n \log n)O(nlogn) em todos os casos, tornando-se um dos algoritmos mais confiáveis para tarefas de ordenação.
+        </p>
+
+        <h2>Como ele idealizou o algoritmo?</h2>
+        <p>
+            A base conceitual do Merge Sort provavelmente veio do profundo conhecimento matemático de von Neumann e sua experiência com recursão. O método reflete os princípios de simplificar problemas complexos ao dividi-los em subproblemas manejáveis, característica típica de estratégias de dividir e conquistar. Ele percebeu que a ordenação poderia ser simplificada se subconjuntos menores já ordenados fossem combinados, reduzindo a necessidade de comparações entre todos os elementos do conjunto​.
+        </p>
+
+        <h2>Por que é importante?</h2>
+        <p>
+            A importância do Merge Sort está em sua estabilidade e desempenho consistente. Ele garante eficiência, independentemente da ordem inicial dos dados, sendo particularmente adequado para a ordenação externa (gerenciamento de dados armazenados em discos). Adaptações modernas, como o Timsort, que combina Merge Sort e Insertion Sort, são amplamente usadas em linguagens de programação como Python e Java para operações robustas de ordenação
+        </p>
+
+        <h2>Funcionamento do Merge Sort</h2>
+        <ol>
+
+            <li>
+                Divisão:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        A lista é continuamente dividida em duas metades até que cada sublista tenha um único elemento (ou nenhum elemento).
+                    </li>
+                    <br>
+                    <li>
+                        Essa etapa ocorre de forma recursiva, dividindo a lista em partes menores.
+                    </li>
+                </ul>
+                <br>
+            </li>
+                
+            <li>
+                Conquista (Ordenação e Mesclagem):
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Cada par de sublistas é mesclado (merge) de forma ordenada.
+                    </li>
+                    <br>
+                    <li>
+                        A mesclagem é feita comparando os elementos das sublistas e adicionando o menor elemento na lista resultante.
+                    </li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                Combinação Final:
+                <br>
+                <br>
+                <ul>
+                    <li>As sublistas ordenadas são combinadas, formando a lista original completamente ordenada.</li>
+                </ul>
+                <br>
+            </li>
+        </ol>
+
+        <h2>Funcionamento com um Exemplo</h2>
+        <ul>
+            Dada a lista [38, 27, 43, 3, 9, 82, 10]:
+            <br>
+            <br>
+            <li>Divisão:
+                <ul class="sub-lista">                  
+                    <li>
+                        [38, 27, 43, 3, 9, 82, 10] é dividida em [38, 27, 43] e [3, 9, 82, 10].
+                    </li>
+                    <br>
+                    <li>
+                        [38, 27, 43] é dividida em [38] e [27, 43]. Depois, [27, 43] é dividida em [27] e [43].
+                    </li>
+                    <br>
+                    <li>
+                        [3, 9, 82, 10] é dividida em [3, 9] e [82, 10]. Depois, [3, 9] é dividida em [3] e [9]. Similarmente, [82, 10] é dividida em [82] e [10].
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Mesclagem Ordenada:
+                <ul class="sub-lista">
+                    <li>
+                        [27] e [43] são mesclados para formar [27, 43].
+                    </li>
+                    <br>
+                    <li>
+                        [38] e [27, 43] são mesclados para formar [27, 38, 43].
+                    </li>
+                    <br>
+                    <li>
+                        [3] e [9] são mesclados para formar [3, 9].
+                    </li>
+                    <li>
+                        [82] e [10] são mesclados para formar [10, 82].
+                    </li>
+                    <br>
+                    <li>
+                        [3, 9] e [10, 82] são mesclados para formar [3, 9, 10, 82].
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Mesclagem Final:
+                <ul class="sub-lista">
+                    <li>
+                        [27, 38, 43] e [3, 9, 10, 82] são mesclados para formar [3, 9, 10, 27, 38, 43, 82].
+                    </li>
+                </ul>
+            </li>
+        </ul>            
+
+        <h2>Vantagens e Desvantagens</h2>
+        <h3>Vantagens</h3>
+        <ol>
+            <li>
+                Complexidade Garantida:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Tem um desempenho consistente com complexidade de tempo O(n log n), independentemente do estado inicial dos dados (ordenados, desordenados, etc.).
+                    </li>
+                </ul>
+                <br>
+            </li>
+
+            <li>
+                Estabilidade:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Mantém a ordem relativa de elementos iguais, o que é útil em cenários onde essa característica é necessária, como ordenação baseada em chaves múltiplas.
+                    </li>
+                </ul>
+                <br>
+            </li>
+
+            <li>
+                Eficiência em Grandes Dados:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        É adequado para grandes conjuntos de dados que não cabem na memória, pois foi originalmente projetado para trabalhar com dispositivos de armazenamento externos, como fitas magnéticas.
+                    </li>
+                </ul>
+                <br>
+            </li>
+
+            <li>
+                Paralelismo:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        O algoritmo divide o problema em subproblemas independentes, o que facilita a paralelização em sistemas multicore ou distribuídos.
+                    </li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                Bom para Estruturas de Dados Sequenciais:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Funciona bem em listas encadeadas, pois não requer acesso aleatório e pode evitar o custo de alocações extras de memória. 
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Desvantagens</h3>
+        <ol>
+            <li>
+                Uso de Memória Extra:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Requer espaço adicional proporcional ao tamanho da lista (O(n)O(n)O(n)) para armazenar as sublistas temporárias durante a mesclagem. Isso pode ser um problema em sistemas com pouca memória.
+                    </li>
+                </ul>
+                <br>
+            </li>
+
+            <li>
+                Ineficiência em Pequenos Conjuntos de Dados:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Para listas pequenas, algoritmos como o Insertion Sort são mais rápidos devido ao overhead da recursão e mesclagem.
+                    </li>
+                </ul>
+                <br>
+            </li>
+
+            <li>
+                Desempenho em Memória Interna:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Embora eficiente, outros algoritmos como o Quick Sort geralmente são mais rápidos em ambientes de memória interna porque têm menor uso de memória e um melhor comportamento cache-friendly.
+                    </li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                Requer Implementação Cuidadosa:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        A mesclagem pode ser complexa para implementar corretamente, especialmente para listas de tamanhos variados ou quando a estabilidade precisa ser garantida.
+                    </li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                Recursividade:
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        A abordagem recursiva pode levar ao consumo de memória extra na pilha de chamadas em algumas implementações, o que pode causar problemas em listas muito grandes.
+                    </li>
+                </ul>
+            </li>
+            <br>
+        </ol>
+
+        <h2>Resumo de Uso</h2>
+        <ul>
+            <li>
+                Quando usar o Merge Sort:
+                <ul class="sub-lista">
+                    <li>
+                        Quando a estabilidade é necessária.
+                    </li>
+                    <br>
+                    <li>
+                        Para dados armazenados externamente ou grandes volumes que excedem a capacidade da memória principal.
+                    </li>
+                    <br>
+                    <li>
+                        Em sistemas onde a paralelização é uma prioridade.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Quando evitar:
+                <ul class="sub-lista">
+                    <li>
+                        Quando o uso de memória extra é uma limitação crítica.
+                    </li>
+                    <br>
+                    <li>
+                        Para listas pequenas ou onde o estado inicial já está quase ordenado (neste caso, outros algoritmos como Quick Sort ou Insertion Sort são mais rápidos).
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <script src="/js/barra-menu.js"></script>
+</body>
+</html>

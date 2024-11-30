@@ -1,0 +1,176 @@
+/* Estilos globais e de layout */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-family: 'Microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+/* Responsividade para telas menores */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main.escolha > div {
+    width: 300px;
+    height: 300px;
+    background: rgba(128, 128, 128, 0.308);
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+main.escolha > div > ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main.escolha > div > ul.dois > li > a > button {
+    width: 15em;
+    height: 3.6em;
+    margin: 16px;
+}
+
+main.escolha > div > ul.dois > li > a > button:before {
+    height: 138px;
+    width: 400px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+canvas {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+div.menu {
+    width: 300px;
+    height: 300px;
+    background: rgba(128, 128, 128, 0.308);
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+div.menu > h1 {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+button.opcoes {
+    --color: #2e045f;
+    background-color: skyblue;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+button.opcoes:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+button.opcoes:hover {
+    color: cyan;
+}
+
+button.opcoes:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+button.opcoes:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+
+@keyframes colorShift {
+    0% {
+        background-position: -200%; /* O gradiente começa à esquerda */
+    }
+    100% {
+        background-position: 200%; /* O gradiente vai até a direita */
+    }
+}
+
+.animated-color {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(75deg, royalblue, blueviolet, deepskyblue, royalblue);
+    background-size: 200%;
+    background-position: -100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+    animation: colorShift 9s linear infinite;
+}
+
+/* Estilos para dispositivos móveis (mobile-first) */
+@media screen and (max-width: 667px) {
+    /* Ajusta os botões dentro da área principal */
+    main .escolha ul.dois li {
+        width: 100%;
+        text-align: center;
+    }
+
+    main .escolha ul.dois li a button {
+        width: 90%;
+        padding: 12px 0;
+        margin: 10px 0;
+    }
+}
+
+/* Garantir que o layout funcione em telas maiores também */
+@media screen and (min-width: 667px) {
+    main .escolha ul.dois li a button {
+        width: auto;
+        padding: 12px 20px;
+    }
+}
