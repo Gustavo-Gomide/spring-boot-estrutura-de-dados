@@ -1,6 +1,8 @@
 package com.estruturaDeDados.ordenacao.controller;
 
 import java.util.List;
+import java.util.Locale;
+import java.text.NumberFormat;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,9 @@ import com.estruturaDeDados.ordenacao.services.SortService;
 
 @Controller
 public class SiteController {
+	Locale brasil = Locale.of("pt", "BR");
+	NumberFormat formatacao = NumberFormat.getIntegerInstance(brasil);
+
 	
 	// pagina principal
 	@GetMapping("/")
@@ -54,8 +59,9 @@ public class SiteController {
     ModelAndView mv = new ModelAndView("demonstracao/padrao/demonstracao-selection-default");
 	List <Integer> listaOrdenada = SortService.listaDefaultSelection();
 	long tempoExecucao = SortService.getTempoFinal();
+	String tempoFormatado = formatacao.format(tempoExecucao);
     mv.addObject("listaNumeroSelection", listaOrdenada);
-    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoExecucao + " ns");
+    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ns");
     return mv;
   	}
 
@@ -65,8 +71,9 @@ public class SiteController {
     ModelAndView mv = new ModelAndView("demonstracao/padrao/demonstracao-merge-default");
 	List <Integer> listaOrdenada = SortService.listaDefaultMerge();
 	long tempoExecucao = SortService.getTempoFinal();
+	String tempoFormatado = formatacao.format(tempoExecucao);
     mv.addObject("listaNumeroMerge", listaOrdenada);
-    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoExecucao + " ns");
+    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ns");
     return mv;
   	}
 
@@ -83,7 +90,8 @@ public class SiteController {
 	List <Integer> listaOrdenada = SortService.listaXNumerosSelection();
 	long tempoExecucao = SortService.getTempoFinal();
     mv.addObject("listaNumeroSelection", listaOrdenada);
-    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoExecucao + " ms");
+	String tempoFormatado = formatacao.format(tempoExecucao);
+    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ms");
     return mv;
   	}
 
@@ -93,8 +101,9 @@ public class SiteController {
     ModelAndView mv = new ModelAndView("demonstracao/n-valores/demonstracao-merge-Nvalores");
 	List <Integer> listaOrdenada = SortService.listaXNumerosMerge();
 	long tempoExecucao = SortService.getTempoFinal();
+	String tempoFormatado = formatacao.format(tempoExecucao);
     mv.addObject("listaNumeroMerge", listaOrdenada);
-    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoExecucao + " ms");
+    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ms");
     return mv;
   	}
 
@@ -110,8 +119,9 @@ public class SiteController {
     ModelAndView mv = new ModelAndView("demonstracao/palavras/demonstracao-selection-palavras");
 	List <String> listaOrdenada = SortService.listaPalavrasSelection();
 	long tempoExecucao = SortService.getTempoFinal();
+	String tempoFormatado = formatacao.format(tempoExecucao);
     mv.addObject("listaPalavraSelection", listaOrdenada);
-    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoExecucao + " ns");
+    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ns");
     return mv;
   	}
 
@@ -121,8 +131,9 @@ public class SiteController {
     ModelAndView mv = new ModelAndView("demonstracao/palavras/demonstracao-merge-palavras");
 	List <String> listaOrdenada = SortService.listaPalavrasMerge();
 	long tempoExecucao = SortService.getTempoFinal();
+	String tempoFormatado = formatacao.format(tempoExecucao);
     mv.addObject("listaPalavraMerge", listaOrdenada);
-    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoExecucao + " ns");
+    mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ns");
     return mv;
   	}
 }
