@@ -1,0 +1,52 @@
+/* Estilo para garantir que o canvas fique no fundo */
+#canvas {
+    position: absolute; /* Permite posicionar o canvas no fundo */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Garante que fique atrás dos outros elementos */
+    width: 100%;  /* A largura será 100% da janela de visualização */
+    height: 100%; /* A altura será 100% da janela de visualização */
+    object-fit: cover; /* Garante que o canvas preencha toda a área sem distorcer */
+  }
+  
+  /* Estilo para o contêiner da imagem */
+  .container {
+    position: absolute; /* Faz a imagem ficar acima do canvas */
+    top: 50%; /* Move o contêiner para o meio da tela */
+    left: 50%; /* Move o contêiner para o meio da tela */
+    transform: translate(-50%, -50%); /* Ajusta o posicionamento para centralizar */
+    z-index: 1; /* Coloca o contêiner da imagem acima do canvas */
+    width: 90%; /* A largura da imagem será 90% da tela */
+    height: 90%; /* A altura da imagem será 90% da tela */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center; /* Centraliza a imagem verticalmente */
+    overflow: hidden; /* Impede a rolagem */
+  }
+  
+  /* Estilo para a imagem */
+  .responsive-img {
+    max-width: 100%; /* A imagem não ultrapassa a largura do contêiner */
+    max-height: 100%; /* A imagem não ultrapassa a altura do contêiner */
+    object-fit: contain; /* Faz a imagem se ajustar sem distorção */
+  }
+  
+  /* Media Query para telas pequenas, como celulares */
+  @media screen and (max-width: 375px) and (max-height: 667px) {
+    .container {
+      width: 90%;
+      height: 80%; /* Ajusta a altura para caber melhor na tela */
+    }
+    .responsive-img {
+      width: 100%; /* A imagem ocupará toda a largura disponível */
+      height: auto; /* Mantém a proporção da imagem */
+    }
+  }
+  
+  /* Impede que o body tenha rolagem desnecessária */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Remove rolagem da página inteira */
+  }
+  

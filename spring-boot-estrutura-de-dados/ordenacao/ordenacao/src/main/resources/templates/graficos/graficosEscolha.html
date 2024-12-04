@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha dos Gráficos</title>
+    <link rel="icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/estilo-base.css">
+    <link rel="stylesheet" href="/css/barra-menu.css">
+</head>
+<body>
+    <nav>
+        <button class="menu-icon" id="menu-icon">&#9776;</button>
+        <ul>
+            <li>
+                <a href="/historia">História</a>
+            </li>
+            <li>
+                <a href="https://gamma.app/docs/Merge-Sort-e-Selection-Sort-Explorando-Metodos-de-Ordenacao-de-Da-rq8mayr1841945x?mode=doc", target="_blank">
+                    Slides  
+                </a>
+            </li>
+            <li>
+                <a href="/demonstracao">Demonstração</a>
+            </li>
+            <li>
+                <a href="/graficos">Gráficos</a>
+            </li>
+        </ul>
+    </nav>
+    <canvas id="canvas" width="1920" height="922"></canvas>
+    <main class="escolha">
+        <div class="menu">
+            <h1 class="animated-color">
+                Escolha o gráfico que deseja ver
+            </h1>
+            <ul class="dois">
+                <li><a href="/graficos/tempo"><button class="opcoes">Comparação de tempo</button></a></li>
+                <li><a href="/graficos/espaco"><button class="opcoes">Comparação de espaço</button></a></li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="/js/script-base.js"></script>
+    <script src="/js/barra-menu.js"></script>
+</body>
+</html>

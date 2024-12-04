@@ -136,4 +136,22 @@ public class SiteController {
     mv.addObject("tempoExecucao", "Tempo de Execução: " + tempoFormatado + " ns");
     return mv;
   	}
+
+	// pagina escolher grafico para ver
+	@GetMapping("graficos")
+	public String graficos() {
+		return "graficos/graficosEscolha";
+	}
+
+	// pagina para ver grafico de tempo
+	@GetMapping("graficos/tempo")
+	public String graficoTempo() {
+		return "graficos/tempo";
+	}
+
+	// pagina para ver grafico de espaço
+	@GetMapping("graficos/espaco")
+	public String graficoEspaco() {
+		return "graficos/espaco";
+	}
 }
